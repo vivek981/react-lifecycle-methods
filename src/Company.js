@@ -1,9 +1,12 @@
 import React from 'react';
 
 class Company extends React.Component {
-    state = {
-        company: 'Quovantis'
-    };
+    constructor (props){
+        super(props);
+        this.state = {
+            company: 'Quovantis'
+        };
+    }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState != this.state){
@@ -23,6 +26,7 @@ class Company extends React.Component {
             textAlign: 'center',
             fontSize: 18,
             }}>
+                <p>This is just {this.props.sample}</p>
             Design led by development :
             {this.state.company}
             <div id="disclaimer"></div>
